@@ -1,0 +1,5 @@
+const GACHA_COOLDOWN = 100
+
+export {
+    GACHA_COOLDOWN
+}
