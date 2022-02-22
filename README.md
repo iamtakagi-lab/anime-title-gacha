@@ -1,6 +1,7 @@
 # anime-title-gacha
 アニメタイトルをランダムに抽出するガチャです。
 
+## Install
 ```yml
 version: '3.9'
 services:
@@ -10,5 +11,6 @@ services:
     environment:
       - TZ=Asia/Tokyo
       - PORT=3030
+      - ANNICT_TOKEN=xxx
     restart: unless-stopped
 ```
