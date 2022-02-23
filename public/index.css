@@ -17,7 +17,7 @@ h1 {
 }
 
 body {
-  background: #deecbc;
+  background: #fffec9;
 }
 
 @keyframes fadeIn {
@@ -60,8 +60,6 @@ h2 {
 
 #container {
   text-align: center;
-  display: flex;
-  flex-direction: column;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -98,7 +96,6 @@ h2 {
   padding-right: 0.75rem;
   margin-top: 1rem;
   margin-bottom: 0.25rem;
-  margin-left: 0.5rem;
   background-color: #3b82f6;
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
@@ -115,6 +112,7 @@ h2 {
   border-width: 1px;
   border-color: transparent;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .btn:hover {
