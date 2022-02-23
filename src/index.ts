@@ -1,9 +1,8 @@
 import path from "path";
 import { findWorkById } from "./annict";
 import express from "express";
-import got from "got";
-import stream from "stream";
 import request from "request";
+
 const app = express();
 
 /* Annict ID から 作品情報を返します。クライアントサイドだと環境変数のトークンが拾えないので、サーバーサイドで処理して返却する。 */
