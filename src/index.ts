@@ -22,7 +22,9 @@ app.get("/api/works/image/:id", async (req, res, next) => {
   res.setHeader("Content-Type", "image/png");
   res.setHeader("Cache-Control", "max-age=86400, public, stale-while-revalidate")
   res.setHeader("Content-DPR", "2.0");
-  request(work.images.recommended_url).pipe(res, { end: true });
+  const image = request(work.images.recommended_url)
+  image.pipe(res, { end: true });
+  res.on("close", () => image.destroy())
 });
 
 app.use(express.static(path.resolve(__dirname, "..", "public")));

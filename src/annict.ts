@@ -11,9 +11,14 @@ const findWorkById = async (id: WorkId): Promise<Work | null> => {
         Authorization: `Bearer ${ANNICT_TOKEN}`,
       }
     },(err, callback, body) => {
-      const { works } = JSON.parse(body) as WorksGetResponse
-      if(!works || !works.length) return resolve(null)
-      resolve(works[0])
+      if(err) return resolve(null)
+      try {
+        const { works } = JSON.parse(body) as WorksGetResponse
+        if(!works || !works.length) return resolve(null)
+        resolve(works[0]) 
+      } catch (error) {
+        resolve(null)
+      }
     })
   });
 };
