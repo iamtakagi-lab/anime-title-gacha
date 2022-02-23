@@ -27,6 +27,7 @@ export const App: React.FC<{}> = () => {
       {work && (
         <button
           className="btn"
+          id="share_btn"
           // TODO: "&"を含む文字列に対応させる
           onClick={() =>
             open(

@@ -111,14 +111,15 @@ h2 {
   border-radius: 9999px;
   border-width: 1px;
   border-color: transparent;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   width: 100%;
 }
 
-.btn:hover {
-  background-color: transparent;
-  color: #3b82f6;
-  border-color: #3b82f6;
+#share_btn {
+  background-color: #3b82f6;
+}
+
+#share_btn:hover {
+  opacity: 0.7;
 }
 
 #random_btn {
@@ -126,9 +127,7 @@ h2 {
 }
 
 #random_btn:hover {
-  background-color: transparent;
-  color: #24a14e;
-  border-color: #24a14e;
+  opacity: 0.7;
 }
 
 footer {
