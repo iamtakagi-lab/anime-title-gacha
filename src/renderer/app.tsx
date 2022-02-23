@@ -66,7 +66,7 @@ export const App: React.FC<{}> = () => {
             </a>
             <img
               id="work_image"
-              src={`${API_ENDPOINT}/${work.id}`}
+              src={`${API_ENDPOINT}/works/image/${work.id}`}
               alt=""
               width={`80%`}
               height={`80%`}
