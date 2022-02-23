@@ -20,6 +20,7 @@ app.get("/api/works/image/:id", async (req, res, next) => {
   if (!work || !work.images.recommended_url) return next();
 
   res.setHeader("Content-Type", "image/png");
+  res.setHeader("Cache-Control", "max-age=86400, public, stale-while-revalidate")
   res.setHeader("Content-DPR", "2.0");
   request(work.images.recommended_url).pipe(res, { end: true });
 });
