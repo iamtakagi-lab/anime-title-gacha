@@ -51,11 +51,4 @@ interface WorksGetResponse {
   prev_page: number;
 }
 
-export {
-    Facebook,
-    Twitter,
-    Images,
-    WorkId,
-    Work,
-    WorksGetResponse
-}
+export { Facebook, Twitter, Images, WorkId, Work, WorksGetResponse };

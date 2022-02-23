@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Work } from "../types";
+import { Work } from "../annict";
 import { pickRandomWork } from "./common";
-import { API_ENDPOINT } from "./consts";
+import { API_BASEURL } from "./consts";
 
 export const useCounter = (init: number = 0) => {
   const [count, setCount] = useState(init);
@@ -63,7 +63,7 @@ export const App: React.FC<{}> = () => {
             </a>
             <img
               id="work_image"
-              src={`${API_ENDPOINT}/works/image/${work.id}`}
+              src={`${API_BASEURL}/works/image/${work.id}`}
               alt=""
               width={`80%`}
               height={`80%`}

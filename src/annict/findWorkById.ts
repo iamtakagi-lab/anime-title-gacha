@@ -1,6 +1,6 @@
 import request from 'request';
-import { ANNICT_TOKEN } from './env';
-import { WorkId, Work, WorksGetResponse } from './types';
+import { ANNICT_TOKEN } from '../env';
+import { Work, WorkId, WorksGetResponse } from './types';
 
 const findWorkById = async (id: WorkId): Promise<Work | null> => {
   return new Promise(async (resolve) => {
