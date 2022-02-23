@@ -3,7 +3,7 @@ const nodeExternals = require("webpack-node-externals");
 const isProduction = process.env.NODE_ENV === "production"
 
 /** @type {import("webpack").Configuration} */
-const webConfig = {
+const rendererConfig = {
     mode: isProduction ? "production" : "development",
     entry: {
         main: "./src/renderer/index.tsx",
@@ -34,7 +34,7 @@ const webConfig = {
     devtool: "source-map",
 }
 
-const nodeConfig  = {
+const serverConfig  = {
     mode: isProduction ? "production" : "development",
     target: 'node',
     externals: [nodeExternals()],
@@ -60,4 +60,4 @@ const nodeConfig  = {
     devtool: "source-map",
 }
 
-module.exports = [webConfig, nodeConfig]
+module.exports = [rendererConfig, serverConfig]
