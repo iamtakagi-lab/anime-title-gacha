@@ -1,11 +1,12 @@
-import { arm } from '@kawaiioverflow/arm'
 import { Work } from '../types';
+import { API_ENDPOINT } from './consts';
 
 const randomPick = <T> (array: Array<T>) => array[Math.floor(Math.random() * array.length)]
 
 const pickRandomWork = async () => { 
-    const { annict_id } = randomPick(arm.filter(v => v.annict_id))
-    const work = (await fetch(`https://anime-title-gacha.iamtakagi.net/api/works/${annict_id}`).then(
+    const annictIds = (await fetch(`https://arm.kawaiioverflow.com/api/arm?service=annict`).then((res) => res.json()) as (number | null)[])
+    const annictId = randomPick(annictIds.filter(v => v !== null))
+    const work = (await fetch(`${API_ENDPOINT}/${annictId}`).then(
         (res) => res.json()
       ) as Work);
     return work;

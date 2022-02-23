@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Work } from "../types";
 import { pickRandomWork } from "./common";
-import { GACHA_COOLDOWN } from "./consts";
+import { API_ENDPOINT, GACHA_COOLDOWN } from "./consts";
 
 export const useCounter = (init: number = 0) => {
   const [count, setCount] = useState(init);
@@ -66,7 +66,7 @@ export const App: React.FC<{}> = () => {
             </a>
             <img
               id="work_image"
-              src={work.images.recommended_url}
+              src={`${API_ENDPOINT}/${work.id}`}
               alt=""
               width={`80%`}
               height={`80%`}
