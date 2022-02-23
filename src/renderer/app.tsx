@@ -44,11 +44,7 @@ export const App: React.FC<{}> = () => {
           🐥ガチャ結果をTwitterでシェア
         </button>
       )}
-      <button
-        className="btn"
-        id="random_btn"
-        onClick={async () => await pick()}
-      >
+      <button className="btn" id="gacha_btn" onClick={async () => await pick()}>
         ガチャを回す
       </button>
       {work && (
@@ -82,10 +78,10 @@ export const App: React.FC<{}> = () => {
       {work && (
         <button
           className="btn"
-          id="random_btn"
+          id="gacha_btn"
           onClick={async () => await pick()}
         >
-          🔃ガチャを回してみる
+          ガチャを回す
         </button>
       )}
     </section>
