@@ -1,4 +1,3 @@
-import got from 'got'
 import request from 'request';
 import { ANNICT_TOKEN } from './env';
 import { WorkId, Work, WorksGetResponse } from './types';
