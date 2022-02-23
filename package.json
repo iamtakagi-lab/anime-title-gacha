@@ -1,6 +1,8 @@
 {
   "name": "anime-title-gacha",
   "version": "1.0.0",
+  "licence": "MIT",
+  "author": "iamtakagi",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "NODE_ENV=production node ./server/main.js"
