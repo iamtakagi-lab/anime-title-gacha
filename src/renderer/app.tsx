@@ -33,7 +33,9 @@ export const App: React.FC<{}> = () => {
             open(
               `https://twitter.com/intent/tweet?text=アニメタイトルガチャで ${
                 work ? work.title.replace("&", "＆") : ""
-              } (${work.season_name_text}) を引きました。ガチャを回した回数: ${count}回&url=https://anime-title-gacha.iamtakagi.net&hashtags=アニメタイトルガチャ`,
+              } (${
+                work.season_name_text
+              }) を引きました。ガチャを回した回数: ${count}回&url=https://anime-title-gacha.iamtakagi.net&hashtags=アニメタイトルガチャ`,
               "_blank",
               "noreferrer"
             )
@@ -47,7 +49,7 @@ export const App: React.FC<{}> = () => {
         id="random_btn"
         onClick={async () => await pick()}
       >
-        🔃ガチャを回してみる
+        ガチャを回す
       </button>
       {work && (
         <div id="work_card">
@@ -55,7 +57,12 @@ export const App: React.FC<{}> = () => {
           <>
             <p id="work_title">{work.title}</p>
             <p>{work.season_name_text}</p>
-            <a id="work_url" href={work.official_site_url} target="_blank" rel="noopener noreferrer">
+            <a
+              id="work_url"
+              href={work.official_site_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {work.official_site_url}
             </a>
             <img
