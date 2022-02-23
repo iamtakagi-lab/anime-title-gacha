@@ -38,7 +38,7 @@ export const App: React.FC<{}> = () => {
             )
           }
         >
-          🐥結果をTwitterでシェアしよう
+          🐥ガチャ結果をTwitterでシェア
         </button>
       )}
       <button
