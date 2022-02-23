@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Work } from "../types";
 import { pickRandomWork } from "./common";
-import { API_ENDPOINT, GACHA_COOLDOWN } from "./consts";
+import { API_ENDPOINT } from "./consts";
 
 export const useCounter = (init: number = 0) => {
   const [count, setCount] = useState(init);
@@ -15,19 +15,11 @@ export const useCounter = (init: number = 0) => {
 export const App: React.FC<{}> = () => {
   const [work, setWork] = useState<Work | null>(null);
   const { count, increment, decrement } = useCounter(0);
-  const [lastClick, setLastClick] = useState(0);
-
-  //100msに1回しか回せないように
-  const isCooldown = () => Date.now() - lastClick < GACHA_COOLDOWN;
 
   const pick = async () => {
-    if (isCooldown()) {
-      return;
-    }
     const work = await pickRandomWork();
     setWork(work);
     increment();
-    setLastClick(Date.now());
   };
 
   return (
@@ -38,9 +30,9 @@ export const App: React.FC<{}> = () => {
           // TODO: "&"を含む文字列に対応させる
           onClick={() =>
             open(
-              `https://twitter.com/intent/tweet?text=アニメタイトルガチャで、${
+              `https://twitter.com/intent/tweet?text=アニメタイトルガチャで ${
                 work ? work.title.replace("&", "＆") : ""
-              }を引きました。ガチャを回した回数: ${count}回&url=https://anime-title-gacha.iamtakagi.net`,
+              } (${work.season_name_text}) を引きました。ガチャを回した回数: ${count}回&url=https://anime-title-gacha.iamtakagi.net&hashtags=アニメタイトルガチャ`,
               "_blank"
             )
           }
